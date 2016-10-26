@@ -345,6 +345,142 @@ function scrollMagicBuild() {
         triggerElement: ".mid2",
         duration: $(".mid2").height()
     }).setTween(mid2Tween).addTo(scrollController);
+
+    var yellowToBlue = new TimelineMax().add([
+        TweenMax.fromTo("#main", 1, {
+            backgroundColor: "#f0e08e"
+        }, {
+            backgroundColor: "#67d4ef",
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".webframe", 1, {
+            borderColor: "#f5ebb5"
+        }, {
+            borderColor: "#a1dceb",
+            ease: Power1.easeout
+        })
+    ]);
+    var yellowToBlueScene = new ScrollMagic.Scene({
+        triggerElement: ".mid3",
+        duration: 600
+    }).setTween(yellowToBlue).addTo(scrollController);
+
+    var mid3Tween = new TimelineMax().add([
+        TweenMax.fromTo(".mid3 .slower", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -50
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .slow", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -100
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .normal", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -300
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .normal2", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -400
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .normal3", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -500
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .fast", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -600
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .faster", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -900
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .soFast", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -1540
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .soFast2", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -1800
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .soFast3", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -2000
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid3 .soFast4", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -2300
+            },
+            ease: Power1.easeout
+        })
+    ]);
+    var mid3Scene = new ScrollMagic.Scene({
+        triggerElement: ".mid3",
+        duration: $(".mid3").height()
+    }).setTween(mid3Tween).addTo(scrollController);
 }
 
 jQuery(document).ready(function(e) {

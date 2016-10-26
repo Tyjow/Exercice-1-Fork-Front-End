@@ -579,11 +579,11 @@ html, body {
     z-index: 3
 }
 #core .mid2 .box-text {
-    z-index: 2;
     position: absolute;
-    width: 20vw;
-    top: 30vh;
-    left: 10vw;
+    left: 50vw;
+    top: 110vh;
+    width: 30vw;
+    z-index: 3;
 }
 #core .mid2 .small-triangle {
     position: absolute;
@@ -619,6 +619,73 @@ html, body {
     left: 50vw;
     margin-left: 15vw;
     top: 35vh;
+}
+#core .mid2 .img4 {
+    position: absolute;
+    width: 40vw;
+    left: 50vw;
+    margin-left: -20vw;
+    top: 115vh;
+}
+#core .mid2 .img5 {
+    position: absolute;
+    width: 30vw;
+    left: 50vw;
+    margin-left: -32vw;
+    top: 180vh;
+}
+#core .mid2 .img6 {
+    position: absolute;
+    width: 30vw;
+    left: 50vw;
+    margin-left: 2vw;
+    top: 170vh;
+}
+#core .mid2 .triangle1 {
+    position: absolute;
+    left: 48vw;
+    top: 90vh;
+    z-index: 3;
+}
+#core .mid2 .triangle2 {
+    position: absolute;
+    left: 30vw;
+    top: 132vh;
+    z-index: 3;
+}
+#core .mid2 .first-letter {
+    z-index: 3;
+    position: absolute;
+    left: 47vw;
+    top: 225vh;
+}
+#core .mid2 .snd-letter {
+    z-index: 3;
+    position: absolute;
+    left: 67vw;
+    top: 300vh;
+}
+#core .mid2 .third-letter {
+    z-index: 3;
+    position: absolute;
+    left: 12vw;
+    top: 365vh;
+}
+
+/*** core 3 ***/
+#core .mid3 .video-wrapper .big-image {
+    background-image: url(../img/video-frame-mid3.jpg);
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+#core .mid3 .video-wrapper .video-js {
+    width: 100% !important;
+    height: 100% !important;
+}
+#core .mid3 {
+    position: relative;
+    height: 280vh;
+    margin-top: 130px;
 }
 section {
 	width: 100%;
