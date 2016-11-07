@@ -1,12 +1,3 @@
-/*var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-
-
-new ScrollMagic.Scene({triggerElement: "#paraImg"})
-		.setTween("#paraImg > .welcome > h2", {y: "-100%", ease: Linear.easeNone})
-		.addIndicators()
-		.addTo(controller);
-*/
-
 function scrollMagicBuild() {
     var scrollController = new ScrollMagic.Controller({
         refreshInterval: 200
@@ -481,6 +472,141 @@ function scrollMagicBuild() {
         triggerElement: ".mid3",
         duration: $(".mid3").height()
     }).setTween(mid3Tween).addTo(scrollController);
+
+    var blueToGreen = new TimelineMax().add([
+        TweenMax.fromTo("#main", 1, {
+            backgroundColor: "#67d4ef"
+        }, {
+            backgroundColor: "#8ef08e",
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".webframe", 1, {
+            borderColor: "#a1dceb"
+        }, {
+            borderColor: "#b5f5b5",
+            ease: Power1.easeout
+        })
+    ]);
+    var blueToGreenScene = new ScrollMagic.Scene({
+        triggerElement: ".mid4",
+        duration: 600
+    }).setTween(blueToGreen).addTo(scrollController);
+    var mid4Tween = new TimelineMax().add([
+        TweenMax.fromTo(".mid4 .slower", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -50
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .slow", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -100
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .normal", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -300
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .normal2", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -400
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .normal3", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -500
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .fast", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -600
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .faster", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -900
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .soFast", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -1540
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .soFast2", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -1800
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .soFast3", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -2000
+            },
+            ease: Power1.easeout
+        }),
+        TweenMax.fromTo(".mid4 .soFast4", 2, {
+            css: {
+                y: 0
+            }
+        }, {
+            css: {
+                y: -2300
+            },
+            ease: Power1.easeout
+        })
+    ]);
+    var mid4Scene = new ScrollMagic.Scene({
+        triggerElement: ".mid4",
+        duration: $(".mid4").height()
+    }).setTween(mid4Tween).addTo(scrollController);
 }
 
 jQuery(document).ready(function(e) {
