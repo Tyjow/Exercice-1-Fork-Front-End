@@ -1,0 +1,897 @@
+/*	
+
+	drop-down menu: http://www.red-team-design.com/css3-dropdown-menu
+
+*/
+
+html{
+	/*background-position: fixed;*/
+	/*background: url('../img/ui/lois-toro-preloader.png') #292929 center center no-repeat;*/
+        background:#292929;
+	display:inline-block;
+	overflow-x:hidden;
+        /*overflow-y:hidden;*/
+	height:100%;
+	min-height:100%;
+	/*min-width:980px;*/
+        width:100%;
+}
+
+html.scroll {
+	/*overflow-y: auto;*/
+}
+
+body{
+	height:100%;
+	width:100%;
+        margin:0px;
+        /*min-height: 600px;*/
+}
+
+ul{
+    	padding: 0px;
+	margin: 0px;
+	list-style:none;
+}
+
+a:link, a:link, a:visited, a:visited, a:active, a:active {
+	text-decoration: none;
+}
+
+a:hover {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1.0;
+	-khtml-opacity: 1.0;
+	opacity: 1.0;
+}
+
+/* PRELOADER **********************************************************/
+
+#qLoverlay {
+	width: 100%;
+        height: 100%;
+	background-color: #292929;
+	background-position: fixed;
+	/** toro solo **/
+        background-image: url(../img/ui/lois-toro-preloader.png);        
+        background-repeat: no-repeat;
+	background-position: center;
+	position: fixed;
+	z-index: 9999999999;
+	top: 0;
+	left: 0;
+}
+/* ==========================================================================
+   HEADER MOBILE
+   ==========================================================================*/
+    #header-mobile{
+        display:none;
+        position:fixed;
+        width:100%;
+        z-index:999;
+    }
+
+    .header-icon{
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        font-size: 1.2em;
+        color: #fff;
+
+        background: url('../img/menu/background_menu.gif');
+		box-sizing: border-box;
+		/*width: 76px;*/
+		width: 70px;
+		height: 70px;
+    }
+    
+    .site-masterhead-inner-wrap {
+        width: 100%;
+        /*background: url('../img/menu/background_menu.gif');*/
+        overflow: hidden;
+        /*height: 52px;*/
+        height: 70px;
+    }
+    
+    .logo_mobile, .logo_mobile a, .logo_mobile a:link, .logo_mobile a:active, .logo_mobile a:visited, .logo_mobile a:hover {
+        left: 0px;
+        top: 0px;
+        /*padding: 10px 15px 16px 10px;*/
+        padding: 19px 15px 25px 10px;
+        margin-left:0px;
+        color:#fff;
+        font-size:1.2em;
+    }
+    
+    .menu-mobile{
+       right:0px;
+       top:0px;
+       /*padding: 12px 20px 16px 20px;*/
+       padding: 21px 20px 25px 20px;
+    }
+    
+    .language-mobile{
+       right:50px;
+       top:0px;
+       /*padding: 12px 20px 16px 20px;*/
+       padding: 21px 20px 25px 20px;
+       color:#999;
+        
+    }
+
+    .bt-menu-trigger {
+		position: fixed;
+		/*left: 76px;*/
+		left: 70px;
+		z-index: 100;
+		display: block;
+		width: 76px;
+		height: 70px;
+		cursor: pointer;
+		background: rgba(255,255,255,0.1);
+		text-align: center;
+		padding: 0px 26px;
+		box-sizing: border-box !important;
+	}
+	.bt-menu-trigger,
+	.bt-menu-trigger *,
+	.bt-menu-trigger *:after,
+	.bt-menu-trigger *:before {
+		box-sizing: border-box;
+	}
+	.bt-menu-trigger span {
+		position: absolute;
+		top: 50%;
+		display: block;
+		width: 24px;
+		height: 2px;
+		background-color: #fff;
+		font-size: 0px;
+		-webkit-transition: background-color 0.3s;
+		transition: background-color 0.3s;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.bt-menu-trigger span:before, .bt-menu-trigger span:after {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		content: '';
+		-webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+		transition: transform 0.3s, background-color 0.3s;
+	}
+	.bt-menu-trigger span:before {
+		-webkit-transform: translateY(-250%);
+		transform: translateY(-250%);
+	}
+	.bt-menu-trigger span:after {
+		-webkit-transform: translateY(250%);
+		transform: translateY(250%);
+	}
+	.bt-menu-trigger.open span:before {
+		-webkit-transform: translateY(-350%);
+		transform: translateY(-350%);
+	}
+	.bt-menu-trigger.open span:after {
+		-webkit-transform: translateY(350%);
+		transform: translateY(350%);
+	}
+       
+/* ==========================================================================
+   END HEADER MOBILE
+   ==========================================================================*/
+
+
+/* ==========================================================================
+   MENU MOBILE BACK
+   ==========================================================================*/
+   .menu-mobile-back, .menu-mobile-language {
+		width: 100%;
+		height: auto;
+		background: url('../img/menu/background_menu_m.png');
+		overflow: hidden;
+		display: none;
+		text-align: center;
+		position: fixed;
+		top: 0px;
+		padding-top: 70px;
+		z-index: -1;
+		height: 100%;
+
+		opacity: 0;
+	}
+     
+   .menu-mobile-back-list{
+       	list-style: none;
+		/*padding: 12px 0px;*/
+		width: 100%;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0px;
+   }
+   
+   .menu-mobile-back-list-item{
+       width:auto;
+       margin-bottom:1px;
+       font-family:"Pathway Gothic One", sans-serif;
+       color:#7d7d7d;
+       font-size:3.4em;
+       padding: 9px 20px;
+       line-height:1em;
+       display:block;
+   }
+   .menu-mobile-back-list-item.idiomas-movil {
+		padding-top: 40px;
+	}
+	.menu-mobile-back-list-item.idiomas-movil a.actlang {
+		color: #fff;
+		text-decoration: underline;
+	}
+   
+   .menu-mobile-back-list-item a, .menu-mobile-back-list-item a:link, .menu-mobile-back-list-item a:hover, .menu-mobile-back-list-item a:active, .menu-mobile-back-list-item a:visited{
+       color:#7d7d7d;
+       text-decoration:none;
+   }
+   
+   .menu-mobile-back-list-item.trends-menu-mobile{
+       color:white;
+   }
+/* ==========================================================================
+   END MENU MOBILE BACK
+   ==========================================================================*/
+
+
+/***********************************************************************
+ * MAIN MENU
+ **********************************************************************/
+#header_show{
+	position: fixed;
+	top: 0px;
+	/*height: 52px;*/
+	height: 70px;
+	z-index: 1;
+	width: 100%;
+	display: block;
+	background: transparent;
+	cursor:default;
+	display:none;
+}
+
+#header_show .icon-lois{
+	float: left;
+	/*padding: 11px 25px 17px 25px;*/
+	/*padding: 23px 25px 25px 25px;*/
+	padding: 23px 23px 25px 23px;
+	width: 24px;
+	height: 24px;
+	font-size: 1.7em;
+	color: #43bffb;
+	margin-right: 18px;
+	background: white;
+}
+
+#header_desktop{
+	/*min-width:930px;*/
+    /*display:none;*/
+    
+	/*z-index:99;*/
+	z-index: 8010;
+
+	color:white;
+
+	position:fixed;
+
+	/*height:52px;*/
+	height:70px;
+
+	left:0px;
+
+	right:0px;
+
+	top: 0px;
+        
+    background:url('../img/background_menu.gif');
+}
+
+.logo, .logo a, .logo a:link, .logo a:active, .logo a:visited, .logo a:hover{
+    float:left;
+    /*padding: 14px 25px 16px 25px;*/
+    /*padding: 23px 25px 25px 25px;*/
+    padding: 23px 23px 25px 23px;
+    color:#fff;
+    width: 24px;
+    height: 24px;
+    /*font-size: 1.2em;*/
+    font-size: 19.2000007629395px;
+    color: #fff;
+    margin-right:18px;
+    /*position: relative;
+    top: -5px;*/
+}
+
+#main_nav.dark {
+
+	background-color:black;
+
+
+
+}
+
+#main_nav>img {
+
+	float:left;
+
+	display:inline;
+
+	margin: 0px 41px 0px 25px;
+
+}
+
+#main_nav>span {
+
+	display:block;
+
+	background-color:white;
+
+	width:0px;
+
+	height:5px;
+
+	margin-top:53px;
+
+	position:absolute;
+
+}
+
+header>span{
+
+	height: 1px;
+
+	background-color: white;
+
+	position: absolute;
+
+	display: block;
+
+	top: 58px;
+
+	width: 100%;
+
+	z-index: 2;
+
+}
+
+.transp{
+
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+	filter: alpha(opacity=50); /* This works in IE 8 & 9 too ... but also 5, 6, 7 */
+
+	-moz-opacity:0.5; /* Older than Firefox 0.9 */
+
+	-khtml-opacity: 0.5; /* Safari 1.x (pre WebKit!) */
+
+	opacity: 0.5; /* Modern! Firefox 0.9+, Safari 2?, Chrome any? Opera 9+, IE 9+ */
+
+	/*z-index:1;*/
+
+}
+
+.menu
+
+{
+
+	position:relative;
+	font-family:'Pathway Gothic One' !important;
+	font-size:20px !important;
+	z-index:3;
+	margin-bottom: 0;
+
+	/* margin-left:120px; */
+
+}
+
+.menu li
+
+{
+
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+
+}
+
+.menu a
+
+{
+
+	cursor:pointer;
+
+	color:#aaa;
+
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+
+	filter: alpha(opacity=100);
+
+	-moz-opacity:1.0;
+
+	-khtml-opacity: 1.0;
+
+	opacity: 1.0;
+
+}
+
+.menu a:link, .menu a:visited, .menu a:active
+
+{
+
+	color:#aaa;
+
+	text-decoration:none;
+
+}
+
+.menu a:hover
+
+{
+
+    color:#fff;
+    
+}
+
+.selected a:hover
+
+{
+    
+    color:#fff;
+    
+}
+
+#main_nav .menu li
+
+{
+
+	display:inline-block;
+
+	float:left;
+
+	/*padding: 12px 5px 12px 5px;*/
+	padding: 21px 5px 21px 5px;
+
+	margin-right:13px;
+
+}
+
+#main_nav .menu li.nlbe-social-icon{
+	padding: 21px 0px;
+  	margin-right: 10px;
+}
+
+#main_nav .menu.menu-margin > li:first-child
+{
+	margin-left: 76px;
+}
+
+#main_nav .submenu
+
+{
+
+/*display: none;*/
+color: #aaa;
+height: 0px;
+position: absolute;
+/*margin-top: 12px;*/
+margin-top: 20px;
+margin-left: -76px;
+overflow: hidden;
+z-index: 10;
+}
+
+#main_nav .submenu li
+
+{
+
+	white-space:nowrap;	
+
+	clear:both;
+
+	margin: 0px;
+
+	padding: 1px 0px 0px 0px;
+
+	display:list-item;
+
+	box-shadow: 0 0 0px rgba(0,0,0,0.0);	/* IE solution for transparent background loosing focus */
+
+}
+
+.submenu li a
+
+{
+        color: #aaa;
+        padding: 7px 11px;
+        display: inline-block;
+        font-size: 20px;
+        position: relative;
+}
+
+/*
+
+.submenu li a span {
+
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+
+	filter: alpha(opacity=100);
+
+	-moz-opacity:1.0;
+
+	-khtml-opacity: 1.0;
+
+	opacity: 1.0;
+
+}
+
+*/
+
+.submenu li img
+
+{
+
+	background-color:#FFFFFF;
+
+	display:inline-block;
+
+	float:left;
+
+	padding-right:0px;
+
+	cursor:pointer;
+        
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+
+	filter: alpha(opacity=0);
+
+	-moz-opacity:0;
+
+	-khtml-opacity: 0;
+
+	opacity: 0;
+
+}
+
+.selected > a
+
+{
+	color:#fff;
+	cursor:default;
+}
+
+.selected a:hover
+
+{
+        color:#fff;
+}
+
+.submenu li.selected > a
+
+{
+	color:#fff;
+        background:url('../img/menu/background_menu.gif');
+}
+
+
+.submenu li.selected > img
+
+{
+
+	cursor:default;
+        opacity:1;
+
+}
+
+.submenu li > a:hover
+
+{
+	color:#fff;	
+        background:url('../img/menu/background_menu.gif');	
+
+}
+
+#main_nav #menu_lang > li
+{
+	float:right;     
+}
+
+#main_nav #idioma
+
+{
+
+	float:right;
+
+	margin-left:0px;
+
+	margin-right:25px;
+
+	text-align:right;
+
+	direction:rtl;
+        
+}
+
+
+#main_nav #idioma .submenu
+{
+
+	margin-right:-14px;
+
+}
+
+#idioma .submenu li
+
+{
+
+	float:right;
+
+	text-align:right;
+
+}
+
+#idioma .submenu li a
+
+{
+	color:#aaa;
+
+	/*background:url(../img/menu/background_nav_item_i.png) repeat-y 0px 0px;*/
+
+	-moz-box-shadow: none;
+
+	-webkit-box-shadow: none;
+
+	box-shadow: none;
+}
+
+#idioma .selected > a
+
+{ 
+	cursor:default;
+}
+
+
+#back_submenu{
+    position:fixed;
+    /*top:52px;*/
+    top:70px;
+    height:0px;
+    width:100%;
+    min-width:960px;
+    background:url('../img/menu/background_menu.gif');
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);
+    -moz-opacity:0.9;
+    -khtml-opacity: 0.9;
+    opacity: 0.9;
+}
+
+
+/* Audio */
+
+#main_nav #audio {
+	float: right;
+	margin-left: 0px;
+	text-align: right;
+	direction: rtl;
+	width:14px;
+	height:14px;
+	background: transparent url(../img/ui/sound-off.gif) no-repeat 10px 20px;
+	padding: 18px 5px 19px 5px;
+	cursor: pointer;
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+}
+
+#main_nav #audio.on {
+	background: transparent url(../img/ui/sound-on.gif) no-repeat 10px 20px;
+}
+
+#campanya ul , #idioma ul{
+    overflow:hidden;
+}
+
+
+/* FOOTER **********************************************************************/
+
+body>footer
+
+{
+	/*min-width:930px;*/
+
+	z-index:2;
+
+	font-family:'Pathway Gothic One';
+
+	font-size:12px;
+
+	color:white;
+
+	position:fixed;
+
+	left:0px;
+
+	right:0px;
+
+	bottom:0px;
+
+	height:35px;
+        
+        background:url('../img/menu/background_menu.gif');
+
+}
+
+footer>span{
+
+	height: 1px;
+
+	background-color: white;
+
+	position: absolute;
+
+	display: block;
+
+	width:100%;
+
+	z-index: 2;
+
+}
+
+footer>div{
+
+	margin-top: 5px;
+
+}
+
+footer .copy{
+	margin: 4px 8px 0px 25px;
+	float:left;
+	font-size: 14px;        
+        color:#aaa;
+}
+
+footer #by{
+	float:right;
+	padding: 2px 25px 0px 0px;
+	font-size: 14px;
+}
+
+footer a
+
+{
+
+	font-size: 15px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: alpha(opacity=60); /* This works in IE 8 & 9 too ... but also 5, 6, 7 */
+	-moz-opacity: 0.6; /* Older than Firefox 0.9 */
+	-khtml-opacity: 0.6; /* Safari 1.x (pre WebKit!) */
+	opacity: 0.6; /* Modern! Firefox 0.9+, Safari 2?, Chrome any? Opera 9+, IE 9+ */
+
+}
+
+footer a:hover
+
+{
+
+	font-size: 15px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100); /* This works in IE 8 & 9 too ... but also 5, 6, 7 */
+	-moz-opacity: 1; /* Older than Firefox 0.9 */
+	-khtml-opacity: 1; /* Safari 1.x (pre WebKit!) */
+	opacity: 1; /* Modern! Firefox 0.9+, Safari 2?, Chrome any? Opera 9+, IE 9+ */
+
+}
+
+footer img
+
+{
+
+	margin:3px 1px 0px 0px;
+
+}
+
+#menu_footer
+
+{
+
+	float:right;
+
+	font-family:'Pathway Gothic One';
+
+	font-size:15px;
+
+	z-index:auto;
+
+}
+
+#menu_footer li
+
+{
+
+	display:inline-block;
+
+	margin: 2px 22px 0px 0px;
+
+}
+
+footer a:link, footer a:link,
+
+footer a:visited, footer a:visited,
+
+footer a:active, footer a:active
+
+{
+
+	color:white;
+
+	text-decoration:none;
+
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* TABLETS & MOBILE */
+@media only screen and (max-width: 1025px) {
+	#header_desktop{
+        top:0!important;
+        /*display:block!important;*/
+    }
+
+	#header_show {
+	    display: none;
+	}
+}
+
+@media only screen and (max-width: 955px) {
+    
+    /* MENUS */
+    #header_desktop{
+        display:none !important;
+    }
+
+    #header_show{
+        display:none !important;
+    }
+    
+    #header-mobile{
+        display:block !important;
+    }
+    
+    footer{
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+	.menu-mobile-back-list-item {
+		font-size: 2.4em;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	.menu-mobile-back-list-item {
+		font-size: 1.4em;
+	}
+}
+

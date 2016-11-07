@@ -10,6 +10,8 @@
 
   	<!-- style CSS -->
   	<link rel="stylesheet" type="text/css" href="css/style.css">
+  	<link rel="stylesheet" type="text/css" href="css/nav.css">
+  	<link rel="stylesheet" type="text/css" href="css/fontello.css">
   	<link rel="stylesheet" type="text/css" href="css/video-js.css">
 
   	<!-- Bootstrap -->
@@ -20,35 +22,69 @@
 <body>
 
 	<!-- barre de navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-	      <a class="navbar-brand" href="#">
-	      	<span class="btn-tyjow"></span>
-	      	<span class="btn-tyjow"></span>
-	      	<span class="btn-tyjow"></span>
-	      </a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
-		    <ul class="nav navbar-nav">
-		      <!-- <li class="active"><a href="#">Accueil</a></li> -->
-		      <li><a href="https://tyjow.github.io/Tyjow-Portfolio/">INICIO</a></li>
-		      <li><a href="#">CAMPAÑA</a></li>
-		      <li><a href="#">ÁREA DE PRENSA</a></li>
-		      <li><a href="#">DONDE COMPRAR</a></li>
-		      <li><a href="#">DO YOUR BUSINESS</a></li>
-		      <li><a href="#">DESCARGAS</a></li>
-		      <li><a href="#">CONTACTA</a></li>
-		    </ul>
-	    </div>
-	  </div>
-	</nav>
+	<header id="header_desktop">
+		<nav id="main_nav">
+		<a href="http://www.loisjeans.com/web2015/es/home"><i class="icon-lois icon-large logo"></i></a>
+		<!-- ICON MENU -->
+		<div class="header-icon menu-mobile bt-menu-trigger open"><span></span></div>           
+		<!-- END ICON MENU -->
+		<ul id="menu_nav" class="menu menu-margin">
+		<li id="inicio"><a href="http://www.loisjeans.com/web2015/es/home">INICIO</a></li>
+		<li id="campanya" class="selected">
+		<a>CAMPAÑA</a>
+		<ul id="sub_campanya" class="submenu">
+		<li id="campanya2013" class="selected">
+		<img src="http://www.loisjeans.com/web2015/img/menu/img_menu_campaign.gif" alt="loisjeans_campaña">
+		<a href="http://www.loisjeans.com/web2015/es/ss2015/campaign">LOIS JEANS SS 2015</a>
+		</li>
+		<li id="video2013">
+		<img src="http://www.loisjeans.com/web2015/img/menu/img_menu_campaign_video.gif" alt="loisjeans_videocampaña">
+		<a href="http://www.loisjeans.com/web2015/es/ss2015/campaign-video">VIDEOS SS 2015</a>
+		</li>
+		<!-- <li id="makingof" >
+		<img src="http://www.loisjeans.com/web2015/img/menu/img_menu_making-of.jpg" alt="loisjeans_makingof" />
+		<a href="http://www.loisjeans.com/web2015/es/ss2015/making-of">MAKING OF SS 2015</a>
+		</li> -->
+		<li id="lookbook">
+		<img src="http://www.loisjeans.com/web2015/img/menu/img_menu_lookbook.gif" alt="loisjeans_lookbook">
+		<a href="http://www.loisjeans.com/web2015/es/ss2015/lookbook">LOOKBOOK SS 2015</a>
+		</li>
+		<li id="aniversary">
+		<img src="http://www.loisjeans.com/web2015/img/menu/img_menu_anniversary.jpg" alt="loisjeans_aniversary">
+		<a href="http://www.loisjeans.com/web2015/es/50-aniversario">LOIS 50TH ANNIVERSARY</a>
+		</li>
+		<li id="timemachine">
+		<img src="http://www.loisjeans.com/web2015/img/menu/img_menu_timemachine.gif" alt="loisjeans_timemachine">
+		<a href="http://www.loisjeans.com/web2015/es/time-machine">THE TIME MACHINE</a>
+		</li>
+		</ul>
+		</li>
+		<li id="prensa"><a href="http://www.loisjeans.com/web2015/es/area-de-prensa">ÁREA DE PRENSA</a></li>
+		<li id="comprar"><a href="http://www.loisjeans.com/web2015/es/donde-comprar">DONDE COMPRAR</a></li>
+		<li id="business"><a href="http://www.loisjeans.com/web2015/es/do-your-business">DO YOUR BUSINESS</a></li>
+		<li id="descargas"><a href="http://www.loisjeans.com/web2015/es/descargas">DESCARGAS</a></li>
+		<li id="contacta"><a href="http://www.loisjeans.com/web2015/es/contacta">CONTACTA</a></li>
+		</ul>
 
+
+		<ul id="menu_lang" class="menu">
+		<li id="idioma">
+		<a>IDIOMA</a>
+		<ul id="sub_idioma" class="submenu">
+		<li id="lang_es" class="selected"><a href="http://www.loisjeans.com/web2015/es/ss2015/campaign">ESPAÑOL</a></li>
+		<li id="lang_en"><a href="http://www.loisjeans.com/web2015/en/ss2015/campaign">ENGLISH</a></li>
+		<li id="lang_fr"><a href="http://www.loisjeans.com/web2015/fr/ss2015/campaign">FRANÇAIS</a></li>
+		</ul>
+		</li>
+
+		<!-- <li id="audio">
+		</li> -->
+
+		</ul>                                    
+		</nav>
+		<div id="back_submenu"></div>
+	</header>
+	<div id="shownav"></div>
 	<!-- Content -->
 	<article id="main">
 		<!-- Header -->
